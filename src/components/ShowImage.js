@@ -1,15 +1,15 @@
 import { useState } from "react";
+import CardImage from "./CardImage";
+import './CardImage.css'
 
 const ShowImage=({image})=>{
 
     
 
     return(
-        <div>
-            {image.map(({id,urls})=>{
-            return <div key={id}>
-            <img  src={urls.regular}/>
-            </div>})}
+        <div className="image-container">
+            {image.map((img)=>{
+            return <CardImage key={img.id} img={img}/>    })}
             {/* Found:{image.length}images */}
         </div>
     )
